@@ -7,13 +7,13 @@
 <style>
 
 *{box-sizing:border-box-sizing}
-body,html{margin:0; padding:0;overflow:hidden;max-height:100vh;max-width:100vh;}
+body,html{background-color:#d2d7de;margin:0; padding:0;overflow:hidden;max-height:100vh;max-width:100vh;}
 body > svg{width:100vw;height:100vh; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;width:100vw;height:100vh;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;width:100vw;height:100vh;
   }
 circle {stroke: DeepPink;fill: none;stroke-width:2;}
 circle:nth-child(2n){stroke:#6ac}
@@ -51,18 +51,18 @@ let svg = document.getElementById("stage");
 function drawCircles() {
   // how many circles to draw 
   //I started with 8 but now I think 15 is the magic number
-  for (i = 0; i < 15; i++) {
+  for (i = 0; i < 25; i++) {
     
     // because circle isnt a html element I needto specify the namespace 
     circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
    
     // maximum 14, minimum 2 and in increments of 2 
-    circle.setAttribute("r", Math.floor(Math.random() * 7) * 2 + 2) ;
+    circle.setAttribute("r", Math.floor(Math.random() * 4) * 3 + 1) ;
     
     // minimum 20 maximum 80, incremements of 20 
     // (so either 20 , 40, 60, 80 )
-    circle.setAttribute("cx", Math.floor(Math.random() * 4) * 20 + 20);
-    circle.setAttribute("cy", Math.floor(Math.random() * 4) * 20 + 20);
+    circle.setAttribute("cx", Math.floor(Math.random() * 6) * 20 );
+    circle.setAttribute("cy", Math.floor(Math.random() * 6) * 20 );
     
     // add these elements to my stage
     svg.appendChild(circle);
